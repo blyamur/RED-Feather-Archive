@@ -3,6 +3,8 @@ RED Feather Archive - Organize. Tag. Find (Mini-catalog) Local DB on Python Flas
 
 
 
+ [Poppler Packaged for Windows](https://github.com/oschwartz10612/poppler-windows)
+
 
 After launch, the service is available at:
 ```
@@ -22,7 +24,8 @@ If necessary, the port can be changed to any other in the `index.py` file
     '.pdf', '.doc', '.docx', '.xls', '.xlsx'
     
 ## Links | Ссылки 
-
+ [Poppler Packaged for Windows](https://github.com/oschwartz10612/poppler-windows)
+ [Poppler Packaged for Windows Releases](https://github.com/oschwartz10612/poppler-windows/releases)
 
 ##  Terms and conditions | Условия
 
