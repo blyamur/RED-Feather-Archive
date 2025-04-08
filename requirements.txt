@@ -1,0 +1,9 @@
+flask
+flask-caching
+pillow
+pystray
+pdf2image
+python-docx
+openpyxl
+opencv-python
+pywin32
