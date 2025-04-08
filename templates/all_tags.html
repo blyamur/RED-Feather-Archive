@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/static/styles.css">
+  <link rel="stylesheet" href="/static/all.css">
+  <title data-i18n-title="menu.all-tags">Все записи тега</title>
+</head>
+<body>
+<section class="file-section">
+  {% if files %}
+  <div class="file-container">
+    {% for name, path, added_at, tags, size, preview in files %}
+        <div class="file-item">
+            <!-- Превью -->
+            <div class="fitems-container">
+            {% if preview %}
+            <div class="preview-container">
+            <a href="#" class="preview-icon" style="position: absolute; top: 10px; right: 13px; color: var(--clean-grey)" data-preview-image="/static/previews/{{ preview }}" alt="Увеличить" title="Увеличить"><i class="ml-5 mr-5 fas fa-expand" data-i18n-title="tooltip.zoom" data-i18n-alt="tooltip.zoom"></i></a>
+
+            <a href="#" class="copy-this-file" data-file-path="{{ path }}" style="position: absolute; bottom: 10px; right: 50px; color: var(--clean-grey)"><i class="ml-5 mr-5 fas fa-copy" data-i18n-title="tooltip.copy-file" data-i18n-alt="tooltip.copy-file"></i></a>
+
+            <a href="#" class="open-this-file" data-file-path="{{ path }}" style="position: absolute; bottom: 10px; right: 10px; color: var(--clean-grey)"><i class="ml-5 mr-5 fas fa-folder-open" data-i18n-title="tooltip.open-file" data-i18n-alt="tooltip.open-file"></i></a>
+                            
+            <a href="#" data-preview-image="/static/previews/{{ preview }}"><img loading="lazy"  src="/static/previews/{{ preview }}" class="preview-image blur lazy"></a>
+            </div>
+            {% else %}
+                        <p class="no-preview" data-i18n="div.no-preview">
+                            Превью недоступно
+                        </p>
+           {% endif %}
+                        <!-- Информация о файле -->
+                        <div class="file-card">
+                            <p class="mb-10">
+                                {{ name }}
+                            </p>
+                            <p class="silver-text f-s-70">
+                                <i class="fas fa-folder-open">
+                                </i>
+                                {{ path }}
+                            </p>
+                            <span class="silver-text f-s-70">
+                                <i class="far fa-file">
+                                </i>
+                                {{ format_size(size) }}
+                            </span>
+                            <span class="silver-text f-s-70">
+                                <i class="fas fa-clock">
+                                </i>
+                                {{ added_at.split('.')[0] }}
+                            </span>
+                        </div>
+                        <div class="fitems3">
+                            {% if tags %} {% for tag in tags.split(',') %}
+                            <div class="tag" data-tag="{{ tag.strip() }}">
+                                {{ tag.strip() }}
+                            </div>
+                            {% endfor %} {% else %}
+                            <div class="notag" data-i18n="div.no-tag">
+                                Нет тегов
+                            </div>
+                    {% endif %}
+                 </div>
+            </div>
+        </div>
+        {% endfor %}
+        </div>
+        {% else %}
+        <p class="no-records" data-i18n="div.no-records">Нет записей</p>
+        {% endif %}
+        </section>
+
+
+<!-- Пагинация -->
+  <div class="pagination" data-route="edit_tags" data-total-pages="{{ total_pages }}">
+   <!-- Ссылка "Первая страница" -->
+   <a href="#" data-i18n-title="tooltip.first-page" class="page-link prev {% if current_page == 1 %}disabled{% endif %}" data-page="1" data-route="edit_tags">←</a>
+   <!-- Список страниц -->{% set start_page = current_page - 2 if current_page - 2 > 1 else 1 %} {% set end_page = current_page + 2 if current_page + 2
+		< total_pages else total_pages %} {% for i in range(start_page, end_page + 1) %} <a href="#" class="page-link {% if i == current_page %}active{% endif %}" data-page="{{ i }}"> {{ i }} </a> {% endfor %}
+   <!-- Ссылка "Последняя страница" -->
+   <a href="#" data-i18n-title="tooltip.last-page" class="page-link next {% if current_page == total_pages %}disabled{% endif %}" data-page="{{ total_pages }}" data-route="edit_tags">→</a>
+  </div>
+
+
+  <a href="/"><div class="back-to-main r-15 sizes"><i class="fas fa-arrow-left" data-i18n-title="tooltip.open-home" data-i18n-alt="tooltip.open-home"></i></div></a>
+  <a href="#" class="blur-switch"><div class="blur-switch chng-vis r-15 sizes"><i class="fas fa-eye-slash" id="blur-unblur" data-i18n-title="tooltip.change-blur" data-i18n-alt="tooltip.change-blur"></i></div></a>
+</body>
+</html>

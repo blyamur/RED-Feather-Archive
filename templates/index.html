@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title data-i18n-title="page.title">RED Feather Archive - Организуй. Тегируй. Находи (Мини-каталог)</title>
+	<link rel="stylesheet" href="/static/styles.css">
+	<link rel="stylesheet" href="/static/all.css">
+	<link rel="shortcut icon" href="/static/icon.ico">
+	<meta http-equiv="x-dns-prefetch-control" content="on">
+</head>
+<body>
+<div class="notice-line hidden"></div>
+
+	<div class="container mt-50">
+	<div class="center">
+	<div class="f-l menu-bar-l mr-10 ml-10 nosizes pointer"><i class="fas fa-bars"></i></div>
+	<div class="f-l">
+	<a href="/" data-i18n-title="tooltip.logo" data-i18n-alt="tooltip.logo"><div class="logo  f-l"></div></a>
+	
+	</div>
+    <div class="f-r" style="padding-top: 13px;">
+        <div style="margin-top:9px!important">
+            <a href="#" id="optimize-db"  class="opt-bt r-25 mr-2" data-i18n-title="tooltip.optimize" data-i18n="tooltip.optimize">Оптимизировать</a>
+            <a href="#" id="on_add_files" class="mn_links mr-2"  data-i18n-title="tooltip.add_files"><i class="fas fa-plus"></i></a>
+            <a href="#" id="check_files" class="mn_links mr-2"  data-i18n-title="tooltip.check_db"><i class="fas fa-tools"></i></a> 
+            <a href="#" id="clear-db" class="mn_links" data-i18n-title="tooltip.clear_db"><i class="fas fa-eraser"></i></a>
+        </div>
+    </div>
+    <div class="f-r pt-20">
+    <div class="f-l pt-2 mr-15 sizes">
+        <a href="/" id="main-page" class="mr-5 nav-links" data-i18n-title="tooltip.home" data-i18n-alt="tooltip.home" data-i18n="menu.home">Главная</a> 
+        <a href="#" id="show-all-files" class="s_links mr-5 nav-links" data-i18n-title="tooltip.all_files" data-i18n-alt="tooltip.all_files" data-i18n="menu.all_files">Все файлы</a>
+        <a href="#" id="edit-tags" class="s_links nav-links" data-i18n-title="tooltip.edit" data-i18n-alt="tooltip.edit" data-i18n="menu.edit">Редактировать</a> 
+    </div>
+    <div class="header-actions">
+    <a href="#" data-i18n-title="tooltip.nightday" data-i18n-alt="tooltip.nightday" class="mode-switch mr-15 r-25">
+        <i class="fas fa-sun" id="dark-light"></i>
+    </a>
+    <a href="#" id="language-switch">
+        <div class="language-ru mb-2 mr-15"></div>
+    </a> 
+    </div>
+    </div>
+    </div>
+    <div class="clear"></div>
+    <form id="searchForm">
+    <div class="search-cont mt-30">
+            <div class="search-box"><input type="text" id="query" name="query" autocomplete="off" placeholder="search.placeholder" class="search_input" required data-i18n-placeholder="search.placeholder"></div>
+            <div class="search-box"><button type="submit" class="f-r" data-i18n="button.search">найти</button></div>
+    </div>
+    </form>
+    <div id="results"></div>
+    </div>
+<a href="#top" onclick="return up()" id="top" data-i18n-title="tooltip.up" data-i18n-alt="tooltip.up">
+<div class="back-to-top r-15 sizes"><i class="fas fa-arrow-up"></i></div>
+</a>
+
+
+<div class="preview-window hidden">
+<div class="close-preview-container">
+<a href="#" class="close-preview" data-i18n-title="tooltip.close"><i class="fas fa-times fa-2x close-preview"></i></a>
+</div>
+<div class="clear"></div>
+<img src="" class="r-5" style="width: 100%; height: auto;">
+</div>
+<div class="overlay hidden"></div>
+<script src="/static/app.js"></script> 
+
+
+<div class="clear"></div>
+<div class="container">
+	<div class="center">
+		<span class="copy center mt-30 mb-10">
+		© <span data-i18n="page.title">RED Feather Archive - Организуй. Тегируй. Находи (Мини-каталог</span>
+		</span>
+		<span class="copy center mb-30">
+			<span data-i18n-html="menu.fromrussiawithlove">Сделано с <i class="fa fa-heart pink-text"></i> в России</span> | 
+			<span data-i18n="menu.donate">Поддержать</span> <a href="https://yoomoney.ru/to/41001158104834" class="dnt" target="_new">yoomoney</a> <a href="https://ko-fi.com/monseg" class="dnt" target="_new">ko-fi</a> | 
+			<a href="https://github.com/blyamur/RED-Feather-Archive/" target="_new">Github</a>
+		</span>
+	</div>
+</div>
+</body>
+</html>

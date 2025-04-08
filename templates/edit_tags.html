@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/static/styles.css">
+  <link rel="stylesheet" href="/static/all.css">
+  <title data-i18n-title="tooltip.edit">Редактирование записей</title>
+ </head>
+ <body>
+  <!-- Контейнер для файлов -->
+  <div class="file-section"> {% if files %} 
+  <div class="file-container"> 
+  {% for id, name, path, tags, size, preview in files %} 
+  <div class="file-item-edit" data-file-id="{{ id }}">
+     <!-- Превью -->
+     <div class="fitems-container"> 
+	 {% if preview %} 
+	 <div class="preview-container">
+       <span style="position: absolute; top: 10px; left: 15px;">
+        <input type="checkbox" name="a" class="mt-5" value="{{ id }}" id="tag-chk-{{ id }}">
+       </span>
+       <a href="#" class="preview-icon" style="position: absolute; top: 10px; right: 13px; color: var(--clean-grey)" data-preview-image="/static/previews/{{ preview }}"><i class="ml-5 mr-5 fas fa-expand" data-i18n-title="tooltip.zoom" data-i18n-alt="tooltip.zoom"></i></a>
+	   
+       <a href="#" class="open-this-file" data-file-path="{{ path }}" style="position: absolute; bottom: 13px; left: 15px; color: var(--clean-grey)" data-file-id="{{ id }}" ><i class="ml-5 mr-2 fas fa-folder-open" data-i18n-title="tooltip.open-file" data-i18n-alt="tooltip.open-file"></i></a>
+	   
+       <a href="#" class="edit-prew" style="position: absolute; bottom: 10px; left: 50px; color: var(--clean-grey)" data-file-id="{{ id }}" ><i class="ml-5 mr-2 fas fa-sync" data-i18n-alt="tooltip.update-preview" data-i18n-title="tooltip.update-preview"></i></a>
+	   
+	    <a href="#" class="copy-this-file" data-file-path="{{ path }}" style="position: absolute; bottom: 13px; left: 100px; color: var(--clean-grey)" ><i class="ml-5 mr-5 fas fa-copy" data-i18n-title="tooltip.copy-file" data-i18n-alt="tooltip.copy-file"></i></a>
+		
+       <a href="#" class="delete-file-system" style="position: absolute; bottom: 50px; right: 10px; color: var(--clean-grey)" data-file-id="{{ id }}"><i class="ml-5 mr-2 fas fa-trash" data-i18n-alt="tooltip.delete-file-system" data-i18n-title="tooltip.delete-file-system"></i></a>
+	   
+       <a href="#" class="delete-file" style="position: absolute; bottom: 10px; right: 10px; color: var(--clean-grey)" data-file-id="{{ id }}"><i class="ml-5 mr-2 fas fa-eraser" data-i18n-alt="tooltip.delete-file" data-i18n-title="tooltip.delete-file"></i></a>
+       
+       <a href="#" data-preview-image="/static/previews/{{ preview }}"><img loading="lazy" src="/static/previews/{{ preview }}" class="preview-image blur lazy"></a>
+      </div> 
+	  {% else %}
+	  <p class="no-preview">
+	  <input type="checkbox" name="a" class="mt-5 f-l" value="{{ id }}" id="tag-chk-{{ id }}">
+	  <span data-i18n="div.no-preview">Превью недоступно</span></p>
+	  {% endif %}
+      <!-- Информация о файле -->
+      <div class="file-card">
+       <p class="mb-10" contenteditable="plaintext-only" id="file-cur-name" data-file-id="{{ id }}">{{ name }}</p>
+       <a href="#" class="save-name hidden" style="position: absolute; top: 10px; right: 10px; color: var(--green)!important" data-file-id="{{ id }}">
+        <i class="ml-2 fas fa-save " data-i18n-alt="tooltip.save-name" data-i18n-title="tooltip.save-name"></i>
+       </a>
+       <p class="silver-text f-s-70">
+        <i class="fas fa-folder-open"></i> {{ path }}
+       </p>
+       <p class="mt-5 silver-text f-s-70">
+        <i class="far fa-file"></i> {{ format_size(size) }}
+       </p>
+      </div>
+      <div class="fitems3">
+	  {% if tags %} 
+	  <div class="tags-list-input mb-10" id="tags-container-{{ id }}">
+	  {% for tag in tags.split(',') %}
+	  <span data-tag="{{ tag.strip() }}" class="tags-input-tag">
+         <span>{{ tag.strip() }}</span>
+         <button type="button" class="tags-input-remove">
+          <i class="fas fa-times"></i>
+         </button>
+        </span>
+		{% endfor %}
+		<input class="tags-input-text" placeholder="tags.placeholder" data-i18n-placeholder="tags.placeholder" id="tag-inp-{{ id }}">
+       </div>
+	   {% else %}
+	   <div class="tags-list-input mb-10" id="tags-container-{{ id }}">
+        <span class="tags-input-tag" style="display: none;"></span>
+        <input class="tags-input-text" placeholder="tags.placeholder" data-i18n-placeholder="tags.placeholder" id="tag-inp-{{ id }}">
+       </div>
+	   {% endif %}
+       <!-- Действия -->
+       <div class="actions">
+        <a href="#" class="save-tags f-r note-green" data-file-id="{{ id }}"  data-i18n="button.save-tag">сохранить теги </a>
+       </div>
+       <div class="clear"></div>
+      </div>
+     </div>
+    </div> {% endfor %} </div> {% else %} <p class="no-records" data-i18n="div.no-records"> Нет записей </p> {% endif %} </div>
+<!-- Пагинация -->
+<div class="pagination" data-route="edit_tags" data-total-pages="{{ total_pages }}">
+    <!-- Ссылка "Первая страница" -->
+    <a href="?page=1" data-i18n-title="tooltip.first-page"
+       class="page-link prev {% if current_page == 1 %}disabled{% endif %}">
+        ←
+    </a>
+
+    <!-- Список страниц -->
+    {% set start_page = current_page - 2 if current_page - 2 > 1 else 1 %}
+    {% set end_page = current_page + 2 if current_page + 2 < total_pages else total_pages %}
+    {% for i in range(start_page, end_page + 1) %}
+        <a href="?page={{ i }}" 
+           class="page-link {% if i == current_page %}active{% endif %}" 
+           data-page="{{ i }}">
+            {{ i }}
+        </a>
+    {% endfor %}
+
+    <!-- Ссылка "Последняя страница" -->
+    <a href="?page={{ total_pages }}" data-i18n-title="tooltip.last-page"
+       class="page-link next {% if current_page == total_pages %}disabled{% endif %}">
+        →
+    </a>
+</div>
+  
+  
+<div class="checked-list r-15 hidden">
+<span data-i18n="div.selected">Выбрано:</span> <span id="count-checked"></span> | <a href="#" id="check-all_files" data-i18n="button.select-all">выбрать все</a> | <a href="#" id="uncheck-all_files" data-i18n="button.unselect-all">снять выбор</a> | <a href="#" id="delete-file-base-list"><i class="ml-5 mr-5 fas fa-eraser tdn" data-i18n-alt="tooltip.delete-file" data-i18n-title="tooltip.delete-file"></i></a> | <a href="#" id="delete-file-system-list"><i class="ml-5 mr-5 fas fa-trash tdn" data-i18n-alt="tooltip.delete-file-system" data-i18n-title="tooltip.delete-file-system"></i></a>
+</div>
+
+  <a href="/"><div class="back-to-main r-15 sizes"><i class="fas fa-arrow-left" data-i18n-title="tooltip.open-home" data-i18n-alt="tooltip.open-home"></i></div></a>
+  <a href="#" class="blur-switch"><div class="blur-switch chng-vis r-15 sizes"><i class="fas fa-eye-slash" id="blur-unblur" data-i18n-title="tooltip.change-blur" data-i18n-alt="tooltip.change-blur"></i></div></a>
+</body>
+</html>
