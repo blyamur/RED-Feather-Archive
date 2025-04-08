@@ -68,7 +68,7 @@ The necessary files and folders will be created automatically on first run, such
 
 
 
-## Links | Ссылки 
+## Links
  [Poppler Packaged for Windows](https://github.com/oschwartz10612/poppler-windows)
  
  [Poppler Packaged for Windows Releases](https://github.com/oschwartz10612/poppler-windows/releases)
@@ -76,7 +76,7 @@ The necessary files and folders will be created automatically on first run, such
  [README на Русском языке]( https://github.com/blyamur/RED-Feather-Archive/blob/main/README_RUS.md)
  
 
-##  Terms and conditions | Условия
+##  Terms and conditions
 
 License: [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
@@ -84,9 +84,9 @@ Not for commercial use. \ Не для коммерческого использ�
 
 
 
-### Did you find this useful?! | Вы нашли это  полезным ?!
+### Did you find this useful?!
 
-Happy to hear that :) If you want to thank me for helping you, you can treat me to a cup of coffee  :coffee: ([yoomoney](https://yoomoney.ru/to/41001158104834) or [ko-fi](https://ko-fi.com/monseg)) 
+Happy to hear that :) If you want to thank me for helping you, you can treat me to a cup of  :coffee: ([yoomoney](https://yoomoney.ru/to/41001158104834) or [ko-fi](https://ko-fi.com/monseg)) 
 
 *Рад это слышать :) Если вы хотите меня отблагодарить помочь, вы можете угостить меня чашечкой кофе*
   
