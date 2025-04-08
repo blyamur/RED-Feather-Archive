@@ -1,8 +1,9 @@
 # RED-Feather-Archive
 RED Feather Archive - Organize. Tag. Find (Mini-catalog) Local DB on Python Flask 
 
-![Light screenshot](https://github.com/blyamur/RED-Feather-Archive/blob/main/screen.jpg)
+When adding video files to the database, a frame from the video is placed as a preview, which can then be changed (random selection).
 
+![Light screenshot](https://github.com/blyamur/RED-Feather-Archive/blob/main/screen.jpg)
 ![Light screenshot](https://github.com/blyamur/RED-Feather-Archive/blob/main/screen_2.jpg)
 
 #### Features:
