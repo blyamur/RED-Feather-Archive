@@ -1,7 +1,11 @@
 # RED-Feather-Archive
 RED Feather Archive - Organize. Tag. Find (Mini-catalog) Local DB on Python Flask 
 
+Catalog, database, media library for your files. You can specify a directory, add a list of files to the database, add tags to them and get access to documents or photos will be easier. For example, you can use it as a photo stock, for a quick search for the desired image or as a library of documents, you can also use it as a media library of your films, adding descriptions and keywords to the records in the database.
+
 When adding video files to the database, a frame from the video is placed as a preview, which can then be changed (random selection).
+
+Use at your own risk. Be careful, there are two options for deleting files, in one case only the entry in the database is deleted, in the other the file is completely deleted from the system.
 
 ![Light screenshot](https://github.com/blyamur/RED-Feather-Archive/blob/main/screen.jpg)
 ![Light screenshot](https://github.com/blyamur/RED-Feather-Archive/blob/main/screen_2.jpg)
