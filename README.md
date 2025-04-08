@@ -1,6 +1,6 @@
 ## RED Feather Archive - Organize. Tag. Find (Mini-catalog) Local DB on Python Flask 
 
-##### Ниже есть ссылка на данный текст на русском языке
+##### Ниже есть ссылка на данный текст на Русском языке
 
 
 Catalog, database, media library for your files. You can specify a directory, add a list of files to the database, add tags to them and get access to documents or photos will be easier. For example, you can use it as a photo stock, for a quick search for the desired image or as a library of documents, you can also use it as a media library of your films, adding descriptions and keywords to the records in the database.
