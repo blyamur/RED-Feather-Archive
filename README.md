@@ -1,6 +1,9 @@
 # RED-Feather-Archive
 RED Feather Archive - Organize. Tag. Find (Mini-catalog) Local DB on Python Flask 
 
+![Light screenshot](https://github.com/blyamur/RED-Feather-Archive/blob/main/screen.jpg)
+
+![Light screenshot](https://github.com/blyamur/RED-Feather-Archive/blob/main/screen_2.jpg)
 
 #### Features:
 *  Dark and light themes with switching
