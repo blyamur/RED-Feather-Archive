@@ -70,7 +70,11 @@ The necessary files and folders will be created automatically on first run, such
 
 ## Links | Ссылки 
  [Poppler Packaged for Windows](https://github.com/oschwartz10612/poppler-windows)
+ 
  [Poppler Packaged for Windows Releases](https://github.com/oschwartz10612/poppler-windows/releases)
+ 
+ [README на Русском языке]( https://github.com/blyamur/RED-Feather-Archive/blob/main/README_RUS.md)
+ 
 
 ##  Terms and conditions | Условия
 
