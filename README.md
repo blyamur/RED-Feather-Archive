@@ -5,7 +5,7 @@ Catalog, database, media library for your files. You can specify a directory, ad
 
 When adding video files to the database, a frame from the video is placed as a preview, which can then be changed (random selection).
 
-Use at your own risk. Be careful, there are two options for deleting files, in one case only the entry in the database is deleted, in the other the file is completely deleted from the system.
+`Use at your own risk`. Be careful, there are two options for deleting files, in one case only the entry in the database is deleted, in the other `the file is completely deleted from the system`.
 
 ![Light screenshot](https://github.com/blyamur/RED-Feather-Archive/blob/main/screen.jpg)
 ![Light screenshot](https://github.com/blyamur/RED-Feather-Archive/blob/main/screen_2.jpg)
